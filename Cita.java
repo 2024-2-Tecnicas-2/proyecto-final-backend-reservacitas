@@ -1,6 +1,10 @@
-package proyecto;
+package com.mycompany.citasapp;
 
 public class Cita {
+
+    static Iterable<Cita> getCitas() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     private int idCita;
     private String fecha;
@@ -20,42 +24,22 @@ public class Cita {
         return idCita;
     }
 
-    public void setIdCita(int idCita) {
-        this.idCita = idCita;
-    }
-
     public String getFecha() {
         return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
     }
 
     public String getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
     public Medico getMedico() {
         return medico;
-    }
-
-    public void setMedico(Medico medico) {
-        this.medico = medico;
     }
 
     public Paciente getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-    
     public void confirmarCita() {
         System.out.println("La cita ha sido confirmada para la fecha: " + fecha + " a las " + hora);
     }
@@ -70,9 +54,7 @@ public class Cita {
         System.out.println("La cita ha sido cancelada.");
     }
 
-    public void consultarDisponibilidad() {
-        System.out.println("La disponibilidad de la cita es para la fecha: " + fecha + " a las " + hora);
+    public boolean isConfirmada() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
-  
 }

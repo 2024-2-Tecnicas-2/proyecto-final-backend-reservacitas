@@ -1,5 +1,4 @@
-
-package proyecto;
+package com.mycompany.citasapp;
 
 public interface IPaciente {
     
@@ -9,5 +8,4 @@ public interface IPaciente {
     
     String getApellido();
     void setTelefono(int telefono);
-    
 }

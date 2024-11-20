@@ -1,5 +1,4 @@
-package proyecto;
-
+package com.mycompany.citasapp;
 
 public interface IMedico {
     
@@ -8,5 +7,4 @@ public interface IMedico {
     void consultarAgenda();
     
     String getEspecialidad();
-    
 }

@@ -1,4 +1,4 @@
-package proyecto;
+package com.mycompany.citasapp;
 
 public abstract class Usuario {
 
@@ -23,7 +23,11 @@ public abstract class Usuario {
     }
 
     public void setId(int id) {
-        this.id = id;
+        if (id >= 0) {
+            this.id = id;
+        } else {
+            System.out.println("ID no válido. El ID debe ser un número positivo.");
+        }
     }
 
     public abstract void consultarAgenda();

@@ -1,7 +1,7 @@
-package proyecto;
+package com.mycompany.citasapp;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Medico extends Usuario implements IMedico {
 
@@ -9,7 +9,7 @@ public class Medico extends Usuario implements IMedico {
     private List<Cita> horarioDisponible = new ArrayList<>();
     private List<Cita> agenda = new ArrayList<>();
 
-    public Medico(String especialidad, String nombre, int id) {
+    public Medico(String especialidad, int id, String nombre) {
         super(nombre, id);
         this.especialidad = especialidad;
     }
@@ -19,24 +19,12 @@ public class Medico extends Usuario implements IMedico {
         return especialidad;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
     public List<Cita> getHorarioDisponible() {
         return horarioDisponible;
     }
 
-    public void setHorarioDisponible(List<Cita> horarioDisponible) {
-        this.horarioDisponible = horarioDisponible;
-    }
-
     public List<Cita> getAgenda() {
         return agenda;
-    }
-
-    public void setAgenda(List<Cita> agenda) {
-        this.agenda = agenda;
     }
 
     @Override
@@ -48,17 +36,15 @@ public class Medico extends Usuario implements IMedico {
         } else {
             System.out.println("Horario no disponible.");
         }
-
     }
 
-    @Override
-    public void consultarHorarioDisponible() {
+    public void consultarHorariosDisponibles() {
         if (horarioDisponible.isEmpty()) {
             System.out.println("No hay horarios disponibles.");
         } else {
             System.out.println("Horarios disponibles:");
             for (Cita cita : horarioDisponible) {
-                System.out.println(cita.getFecha()+" " + cita.getHora() +" " + cita.getMedico().getNombre());
+                System.out.println("ID: " + cita.getIdCita() + " | Fecha: " + cita.getFecha() + " | Hora: " + cita.getHora());
             }
         }
     }
@@ -66,14 +52,17 @@ public class Medico extends Usuario implements IMedico {
     @Override
     public void consultarAgenda() {
         if (agenda.isEmpty()) {
-            System.out.println("La agenda esta vacia");
+            System.out.println("La agenda esta vacia.");
         } else {
-            System.out.println("la agenda es:");
+            System.out.println("Agenda de citas:");
             for (Cita cita : agenda) {
-                System.out.println(cita.getFecha()+" " + cita.getHora() +" " + cita.getMedico().getNombre());
+                System.out.println("ID: " + cita.getIdCita() + " | Fecha: " + cita.getFecha() + " | Hora: " + cita.getHora());
             }
-
         }
+    }
 
+    @Override
+    public void consultarHorarioDisponible() {
+        consultarHorariosDisponibles();
     }
 }
